@@ -1,5 +1,5 @@
 // General
-exports.NODE_APP_PORT = process.env.NODE_APP_PORT;
+exports.NODE_APP_PORT = process.env.PORT;
 
 // JWT
 exports.JWT_SECRET = process.env.JWT_SECRET;
