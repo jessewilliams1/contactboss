@@ -1,7 +1,10 @@
 {
-  "name": "Contact Boss",
-  "version": "1.0",
-  "description": "",
+  "name": "contact-boss",
+  "version": "1.0.0",
+  "description": "Example for Rednote",
+  "engines": {
+    "node": "8.9.1"
+  },
   "main": "contact-boss.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +17,15 @@
     "moment": "*",
     "jsonwebtoken": "*"
   },
-  "author": "Jesse Williams",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jessewilliams1/contactboss.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
   "license": "None"
 }
