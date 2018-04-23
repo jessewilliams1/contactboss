@@ -1,0 +1,30 @@
+<!-- Contact Form -->
+<div ng-if="authenticated" class="container sectionHeader">
+	<div class="row">
+		<div class="col-md-12">
+			<a href="/#/"><i class="fa fa-arrow-left"></i> Back to list</a>
+		</div>
+	</div>
+</div>
+<div ng-if="authenticated" class="container sectionContainer">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h2><i class="fa fa-address-card"></i> {{ title }}</h2>
+		</div>
+	</div>
+
+	<form name="editContactForm" ng-model="singleContact">
+		<div class="col-md-12">
+			<label for="contactName">Name</label>
+			<input type="text" name="contactName" ng-model="singleContact.name" class="form-control defaultInput" required/>
+		</div>
+		<div class="col-md-12">
+			<label for="contactPhone">Phone Number</label>
+			<input type="text" name="contactPhone" ng-model="singleContact.phone" class="form-control defaultInput" required/>
+		</div>
+		<div class="col-md-4"></div><!-- Spacer -->
+		<div class="col-md-4"><button type="button" class="btn btn-danger btn-block" ng-click="deleteContact(singleContact.contact_id)">Delete Contact</button></div>
+		<div class="col-md-4"><button type="button" class="btn btn-success btn-block" ng-click="updateContact(singleContact)">Save Changes</button></div>
+	</form>
+
+</div>

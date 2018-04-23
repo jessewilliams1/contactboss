@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>--</title>
+    	<meta charset="utf-8">
+
+		<!-- Angular, Bootstrap, jQuery, etc -->
+		<link href='https://fonts.googleapis.com/css?family=Work+Sans:200,300,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-animate.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/moment.min.js"></script>
+		<script src="js/jquery.circliful.min.js"></script>
+		<script src="js/select.min.js"></script>
+
+		<!-- Style -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<!-- Angular app & custom scripts -->
+		<script src="js/utils.js"></script>
+		<script src="factories.js"></script>
+		<script src="controllers/maincontroller.js"></script>
+		<script src="controllers/homecontroller.js"></script>
+		<script src="controllers/contactcontroller.js"></script>
+
+		<!-- Main app loaded after controllers -->
+		<script src="app.js"></script>
+
+	</head>
+
+	<body ng-app="App" ng-controller="mainController">
+		<div class="container-fluid" style="padding: 10px;">
+			<div class="col-md-6 text-left"><em><span class="fa fa-address-card"></span> Contact Boss 1.0</em></div>
+			<div class="col-md-6 text-right">
+				<span ng-if="authenticated">Logged in as: {{ currentUser.email }}</span>
+				<span ng-if="authenticated"><button type="button" class="btn btn-primary" ng-click="logout()">Log Out</button></span>
+			</div>
+		</div>
+		
+
+		<div ng-view></div>
+	</body>
+
+</html>

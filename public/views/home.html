@@ -1,0 +1,79 @@
+<!-- Login Form -->
+<div ng-if="!authenticated" class="container sectionContainer">
+	<h2>Login</h2>
+	<form name="loginForm" id="loginForm">
+		<div class="col-md-12">
+			<input type="email" id="loginEmail" name="loginEmail" placeholder="Email" ng-model="loginCredentials.email" class="form-control" required/>
+		</div>
+		<div class="col-md-12">
+			<input type="password" id="loginPassword" name="loginPassword" placeholder="Password" ng-model="loginCredentials.password" class="form-control" required/>
+		</div>
+		<div class="col-md-6">
+			<span style="color:red;" ng-if="loginFailed">Login Failed</span>
+		</div>
+		<div class="col-md-6 text-right">
+			<button type="button" class="btn btn-primary" ng-click="login(loginCredentials)">Login</button>
+		</div>
+	</form>
+</div>
+
+
+<!-- Registration Form -->
+<div ng-if="!authenticated" class="container sectionContainer">
+	<h2>Register New User</h2>
+	<form name="registerForm" id="registerForm">
+		<div class="col-md-12">
+			<input type="email" id="email" name="email" placeholder="Email" ng-model="newUser.email" class="form-control" required/>
+		</div>
+		<div class="col-md-12">
+			<input type="password" id="password" name="password" placeholder="Create a password" ng-model="newUser.password" class="form-control" required/>
+		</div>
+		<div class="col-md-12">
+			<input type="password" id="passwordVerify" name="passwordVerify" placeholder="Verify your password" ng-model="newUser.passwordVerify" class="form-control" required/>
+		</div>
+		<span style="color:red;" ng-if="registerForm.passwordVerify.$touched && newUser.password != newUser.passwordVerify">Passwords don't match</span>
+		<div class="col-md-12 text-right">
+			<button type="button" class="btn btn-success" ng-click="registerUser(newUser)">Register</button>
+		</div>
+		<div class="col-md-12 text-center">
+			<em>You will be logged in after registration</em>
+		</div>
+	</form>
+</div>
+
+<!-- Contact List -->
+<div ng-if="authenticated" class="container sectionContainer">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h2>My Contacts</h2>
+		</div>
+	</div>
+
+	<div ng-if="allContacts.length == 0" class="row text-center">
+		<h4>You don't have any contacts! Create one below!</h4>
+	</div>
+
+	<div ng-repeat="contact in allContacts track by $index" class="row listRow">
+		<div class="col-md-6"><a ng-href="#/contact/{{ contact.contact_id }}"><i class="fa fa-address-card" style="padding-right:10px;"></i>{{ contact.name }}</a></div>
+		<div class="col-md-6">{{ contact.phone }}</div>	
+	</div>
+
+</div>
+
+<!-- New Contact Form -->
+<div ng-if="authenticated" class="container sectionContainer">
+	<div class="col-md-12">
+		<h4>New Contact</h4>
+	</div>
+	<form name="newContactForm" id="newContactForm">
+		<div class="col-md-6">
+			<input type="text" id="newContactName" name="newContactName" placeholder="Name" ng-model="newContact.name" class="form-control" required/>
+		</div>
+		<div class="col-md-6">
+			<input type="text" id="newContactPhone" name="newContactPhone" placeholder="Phone" ng-model="newContact.phone" class="form-control" required/>
+		</div>
+		<div class="col-md-12 text-right">
+			<button type="button" class="btn btn-success" ng-click="createContact(newContact)">Create New Contact</button>
+		</div>
+	</form>
+</div>
