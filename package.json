@@ -12,7 +12,7 @@
     "express": "*",
     "moment": "*",
     "jsonwebtoken": "*",
-    "mysql": "*"
+    "mysql": "2.15.0"
   },
   "author": "Jesse Williams",
   "license": "None"
