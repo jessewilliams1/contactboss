@@ -1,14 +1,19 @@
-function homeController($scope, $location, $window, User, Contact) {
+function homeController($scope, $location, $window, $route, User, Contact) {
 	log.info('homeController loaded');
 	$scope.allContacts = [];
+	$scope.newContact = {};
 
 	$scope.createContact = function(newContact) {
 		Contact.create(newContact,
 			function(response){
 				if(!response.error) {
-					$scope.changeView('/');
+					log.info('Create user success');
+					$scope.newContact = null
+					$route.reload();
 				} else {
 					log.error(response.message);
+					$scope.newContact = {};
+					$route.reload();
 				}
 		  	},
 			function() {

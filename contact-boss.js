@@ -59,7 +59,7 @@ function initializeApp() {
 	try {
 		// Initialize & test the MySQL connection
 		var dbConnection = db();
-		dbConnection.query('SHOW TABLES', function(error, result){
+		dbConnection.query('SHOW Tables', function(error, result){
 			if(error) {
 				log.error('Fatal error connecting to MySQL: ' + error);
 				process.exit(0);
