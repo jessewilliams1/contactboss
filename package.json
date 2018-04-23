@@ -11,7 +11,8 @@
     "body-parser": "*",
     "express": "*",
     "moment": "*",
-    "jsonwebtoken": "*"
+    "jsonwebtoken": "*",
+    "mysql": "*"
   },
   "author": "Jesse Williams",
   "license": "None"
